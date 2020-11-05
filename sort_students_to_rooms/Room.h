@@ -7,7 +7,7 @@ class Room
 {
 public:
 	Room(int size) : _size(size) {}
-	bool is_full();
+	bool is_full() const;
 	void insert_student(Student*);
 
 

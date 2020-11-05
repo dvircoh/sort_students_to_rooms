@@ -9,12 +9,16 @@ using std::cin;
 using std::string;
 using std::endl;
 
-void input_from_teacher(std::vector<Student> students, std::vector<Room> rooms);
+void input_from_teacher(std::vector<Student> &students, std::vector<Room> &rooms);
+void insert_students_name(std::vector<Student>& students);
+void insert_friends(std::vector<Student>& students);
+void insert_not_friends(std::vector<Student>& students);
 
 
 
 int main()
 {
+
 	std::vector<Student> students;
 	std::vector<Room> rooms;
 
@@ -24,15 +28,24 @@ int main()
 }
 
 
-void input_from_teacher(std::vector<Student> students, std::vector<Room> rooms)
+void input_from_teacher(std::vector<Student> &students, std::vector<Room> &rooms)
 {
-	cout<<"Hello dear teacher \n please insert the name of your student"<<endl;
+	insert_students_name(students);
+	insert_friends(students);
+	insert_not_friends(students);
 	
+
+}
+
+void insert_students_name(std::vector<Student>& students)
+{
+	cout << "Hello dear teacher \n please insert the name of your student" << endl;
+
 	int counter = 1;
 	string name;
 	cin >> name;
 
-	do 
+	do
 	{  //don't secure
 		cout << "the name of the student is " << name << " it student number " << counter++ << endl;
 		students.push_back(Student(name));
@@ -41,9 +54,42 @@ void input_from_teacher(std::vector<Student> students, std::vector<Room> rooms)
 
 	} while (!(name == "end"));
 
+}
 
 
+void insert_friends(std::vector<Student>& students)
+{
 
+	for (auto i : students)
+	{
+		string name_of_friend;
 
+		cout << "please insert friend's name of " << i.get_name() << " if have not friends write 'end'" << endl;
+		while (!(name_of_friend == "end"))
+		{
+			cin >> name_of_friend;
+			i.get_friends().push_back(name_of_friend);
+			cout << "please insert friend's name of " << i.get_name() << " if have not more friends write 'end'" << endl;
+		}
+	}
 
 }
+
+void insert_not_friends(std::vector<Student>& students)
+{
+	for (auto i : students)
+	{
+		string name_of_not_friend;
+
+		cout << "please insert not friend's name of " << i.get_name() << " if have not not friends write 'end'" << endl;
+		while (!(name_of_not_friend == "end"))
+		{
+			cin >> name_of_not_friend;
+			i.get_not_friends().push_back(name_of_not_friend);
+			cout << "please insert not friend's name of " << i.get_name() << " if have not not more friends write 'end'" << endl;
+		}
+	}
+
+}
+
+

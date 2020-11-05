@@ -1,15 +1,17 @@
 #include "Room.h"
 
 
-bool Room::is_full()
+bool Room::is_full() const
 {
 	if (_room_members.size() < _size)
 		return false;
 	else return true;
 }
-void Room::insert_student(Student* new_student)
+void Room::insert_student( Student* new_student)
 {
+	new_student->set_occupied(true);
 	_room_members.push_back(new_student);
+	
 }
 
 
