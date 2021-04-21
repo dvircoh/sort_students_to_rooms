@@ -7,10 +7,11 @@ bool Room::is_full() const
 		return false;
 	else return true;
 }
-void Room::insert_student( Student* new_student)
+
+void Room::insert_student(Student* new_student)
 {
 	new_student->set_occupied(true);
-	_room_members.push_back(new_student);
+	_room_members.insert(new_student);
 	
 }
 

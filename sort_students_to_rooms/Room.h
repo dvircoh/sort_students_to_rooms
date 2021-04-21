@@ -1,5 +1,5 @@
 #pragma once
-#include <vector>
+#include <set>
 #include "Student.h"
 
 
@@ -13,8 +13,8 @@ public:
 
 
 private:
-	int _size;
-	std::vector<Student*> _room_members;
+	unsigned int _size;
+	std::set<Student*> _room_members;
 
 
 
