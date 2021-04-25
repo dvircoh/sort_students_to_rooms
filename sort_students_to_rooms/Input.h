@@ -1,14 +1,17 @@
 #pragma once
-#include "Student.h"
-#include "Room.h"
+#include "IDataAccess.h"
 #include <set>
 
 
 class Input
 {
 public:
-	static void input_from_teacher(std::set<Student>& students, std::vector<Room>& rooms);
-	static void insert_students(std::set<Student>& students);
-	static void insert_friends(std::set<Student>& students);
-	static void insert_not_friends(std::set<Student>& students);
+	Input(IDataAccess& dataAccess);
+	void input_from_teacher();
+
+private:
+	void insert_students();
+	void insert_friends();
+	void insert_not_friends();
+	IDataAccess& m_dataAccess;
 };

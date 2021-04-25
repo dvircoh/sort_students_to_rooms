@@ -141,12 +141,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="MemoryAccess.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Student.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="IDataAccess.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="MemoryAccess.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Student.h" />
   </ItemGroup>

@@ -1,6 +1,6 @@
 #include <vector>
 #include "Input.h"
-
+#include "MemoryAccess.h"
 
 
 
@@ -8,10 +8,10 @@
 int main()
 {
 
-	std::set<Student> students;
-	std::vector<Room> rooms;
 	
-	Input::input_from_teacher(students, rooms);
+	MemoryAccess dataAcess;
+	Input input(dataAcess);
+	input.input_from_teacher();
 
 	return 0;
 }
