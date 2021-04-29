@@ -7,14 +7,17 @@ bool MemoryAccess::student_is_exist(std::string name) const
 {
 	return m_students.count(name);
 }
+
 bool MemoryAccess::friend_is_exist(std::string student, std::string friend_name) const
 {
 	return m_students.find(student)->second.is_friend(friend_name);
 }
+
 bool MemoryAccess::not_friend_is_exist(std::string student, std::string not_friend_name) const
 {
 	return m_students.find(student)->second.is_not_friend(not_friend_name);
 }
+
 void MemoryAccess::add_student(std::string name)
 {
 	if (student_is_exist(name))
@@ -28,6 +31,7 @@ void MemoryAccess::add_student(std::string name)
 	}
 
 }
+
 void MemoryAccess::add_friend(std::string student, std::string friend_name)
 {
 	if (student_is_exist(friend_name) && !friend_is_exist(student ,friend_name) && friend_name != student)
@@ -35,6 +39,7 @@ void MemoryAccess::add_friend(std::string student, std::string friend_name)
 	else if (friend_name != "end")
 		std::cout << "error : The student does not exist or the student alredy exist in the list of the friends" << std::endl;
 }
+
 void MemoryAccess::add_not_friend(std::string student, std::string not_friend_name)
 {
 
@@ -43,6 +48,7 @@ void MemoryAccess::add_not_friend(std::string student, std::string not_friend_na
 			else if (not_friend_name != "end")
 				std::cout << "error : The student does not exist or the student alredy exist in the list of the not_friends" << std::endl;
 }
+
 std::vector<std::string> MemoryAccess::get_students_names() const
 {
 	std::vector<std::string> names;
@@ -51,4 +57,14 @@ std::vector<std::string> MemoryAccess::get_students_names() const
 		names.push_back(i.first);
 	}
 	return names;
+}
+
+void MemoryAccess::add_room(int room_size)
+{
+	m_rooms.push_back(Room(room_size));
+}
+
+std::vector<Room> MemoryAccess::get_rooms()
+{
+	return m_rooms;
 }

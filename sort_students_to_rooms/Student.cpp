@@ -32,3 +32,15 @@ void Student::set_occupied(const bool status)
 {
 	_occupied = status;
 }
+
+std::ostream& operator<<(std::ostream& os, const Student& st)
+{
+	os << st._name << std::endl;
+	os << "friends	:";
+	for (auto i : st._friends)
+		os << i << "	";
+	os << "\nnot friends	:";
+	for (auto i : st._not_friends)
+		os << i << "	";
+	return os;
+}

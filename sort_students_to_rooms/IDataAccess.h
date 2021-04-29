@@ -15,6 +15,10 @@ public:
 	virtual void add_not_friend(std::string student, std::string name) = 0;
 	virtual std::vector<std::string> get_students_names() const = 0;
 
+	//room method
+	virtual void add_room(int room_size) = 0;
+	virtual std::vector<Room> get_rooms() = 0;
+
 };
 
 

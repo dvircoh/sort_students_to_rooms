@@ -24,7 +24,7 @@
     <ClCompile Include="Room.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Input.cpp">
+    <ClCompile Include="InputOutput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MemoryAccess.cpp">
@@ -38,7 +38,7 @@
     <ClInclude Include="Room.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Input.h">
+    <ClInclude Include="InputOutput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IDataAccess.h">

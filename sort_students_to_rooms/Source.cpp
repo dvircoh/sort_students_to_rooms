@@ -1,5 +1,5 @@
 #include <vector>
-#include "Input.h"
+#include "InputOutput.h"
 #include "MemoryAccess.h"
 
 
@@ -10,16 +10,12 @@ int main()
 
 	
 	MemoryAccess dataAcess;
-	Input input(dataAcess);
-	input.input_from_teacher();
+	InputOutput input_output(dataAcess);
+	input_output.input_from_teacher();
+
+	//logic
+
+	input_output.print_rooms();
 
 	return 0;
 }
-
-
-
-
-
-
-
-

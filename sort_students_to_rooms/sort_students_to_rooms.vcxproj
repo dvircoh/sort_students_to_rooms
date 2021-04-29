@@ -140,7 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="InputOutput.cpp" />
     <ClCompile Include="MemoryAccess.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -148,7 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IDataAccess.h" />
-    <ClInclude Include="Input.h" />
+    <ClInclude Include="InputOutput.h" />
     <ClInclude Include="MemoryAccess.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Student.h" />
