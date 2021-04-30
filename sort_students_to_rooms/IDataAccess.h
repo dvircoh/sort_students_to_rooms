@@ -1,6 +1,8 @@
 #pragma once
 #include<vector>
 #include<string>
+#include "Room.h"
+
 class IDataAccess
 {
 public:
@@ -16,7 +18,7 @@ public:
 	virtual std::vector<std::string> get_students_names() const = 0;
 
 	//room method
-	virtual void add_room(int room_size) = 0;
+	virtual void add_room(int room_id, int room_size) = 0;
 	virtual std::vector<Room> get_rooms() = 0;
 
 };

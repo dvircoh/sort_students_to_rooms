@@ -74,7 +74,7 @@ void InputOutput::insert_room_details()
 			std::cout << "error : Room size must be big then 0" << std::endl;
 		else
 		{
-			m_dataAccess.add_room(room_size);
+			m_dataAccess.add_room(i, room_size);
 			cout << "room number" << i << "added" << endl;
 			i++;
 		}

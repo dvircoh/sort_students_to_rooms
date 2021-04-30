@@ -59,9 +59,9 @@ std::vector<std::string> MemoryAccess::get_students_names() const
 	return names;
 }
 
-void MemoryAccess::add_room(int room_size)
+void MemoryAccess::add_room(int room_id, int room_size)
 {
-	m_rooms.push_back(Room(room_size));
+	m_rooms.push_back(Room(room_id, room_size));
 }
 
 std::vector<Room> MemoryAccess::get_rooms()

@@ -16,7 +16,7 @@ public:
 	std::vector<std::string> get_students_names() const override;
 
 	//room method
-	void add_room(int room_size) override;
+	void add_room(int room_id, int room_size) override;
 	std::vector<Room> get_rooms() override;
 
 private:
