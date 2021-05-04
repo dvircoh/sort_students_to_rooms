@@ -22,11 +22,12 @@ void InputOutput::insert_students()
 {
 	cout << "Hello dear teacher \nplease insert the name of your student" << endl;
 	string name;
+	cin >> name;
 	do
 	{
-		cin >> name;
 		m_dataAccess.add_student(name);
 		cout << "if have more students insert name of student, else write 'end'" << endl;
+		cin >> name;
 	} while (!(name == "end"));
 }
 
@@ -67,18 +68,21 @@ void InputOutput::insert_room_details()
 	int i = 1;
 	cout << "please insert size of room number" << i << endl;
 	int room_size;
+	cin >> room_size;	//don't secure (if type string)
+	while (room_size < 1 || cin.fail())
+	{
+		cin.clear();
+		cin.ignore(80, '\n');
+		std::cout << "error : Room size must be number big then 0" << std::endl;
+		cin >> room_size;
+	}
 	do
 	{
-		cin >> room_size;	//don't secure (if type string)
-		if (room_size < 1)
-			std::cout << "error : Room size must be big then 0" << std::endl;
-		else
-		{
-			m_dataAccess.add_room(i, room_size);
-			cout << "room number" << i << "added" << endl;
-			i++;
-		}
+		m_dataAccess.add_room(i, room_size);
+		cout << "room number " << i << " added" << endl;
+		i++;
 		cout << "if have more room insert his size, else insert 0" << endl;
+		cin >> room_size;
 	} while (room_size);
 }
 

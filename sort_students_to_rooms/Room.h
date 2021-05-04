@@ -7,13 +7,15 @@
 class Room
 {
 public:
-	Room(int size, int id) : _size(size), _id(id) {}
+	Room(int id, int size) : _id(id), _size(size) {}
 	bool is_full() const;
 	void insert_student(std::string);
+	bool no_not_friends_in_room(const std::string& student) const;
+	const std::vector<Student>& get_room_members() const;
 	friend std::ostream& operator<<(std::ostream& os, const Room& rm);
 private:
 	unsigned int _id;
 	unsigned int _size;
-	std::vector<std::string> _room_members;
+	std::vector<Student> _room_members;
 };
 

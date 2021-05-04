@@ -10,19 +10,21 @@ public:
 	~MemoryAccess() = default;
 
 	//student's method
-	void add_student(std::string name) override;
-	void add_friend(std::string student, std::string name) override;
-	void add_not_friend(std::string student, std::string name) override;
+	void add_student(std::string& name) override;
+	void add_friend(std::string& student, std::string& name) override;
+	void add_not_friend(std::string& student, std::string& name) override;
 	std::vector<std::string> get_students_names() const override;
 
 	//room method
 	void add_room(int room_id, int room_size) override;
 	std::vector<Room> get_rooms() override;
+	void populate_rooms(std::vector<Room>& rooms) override;
+
 
 private:
-	bool student_is_exist(std::string name) const;
-	bool friend_is_exist(std::string student, std::string friend_name) const;
-	bool not_friend_is_exist(std::string student, std::string not_friend_name) const;
+	bool student_is_exist(std::string& name) const;
+	bool friend_is_exist(std::string& student, std::string& friend_name) const;
+	bool not_friend_is_exist(std::string& student, std::string& not_friend_name) const;
 
 	std::map<std::string, Student> m_students;
 	std::vector<Room> m_rooms;
