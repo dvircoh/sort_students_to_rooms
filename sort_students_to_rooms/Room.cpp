@@ -8,10 +8,16 @@ bool Room::is_full() const
 	else return true;
 }
 
-void Room::insert_student(std::string new_student)
+void Room::insert_student(Student new_student)
 {
 	_room_members.push_back(new_student);
 }
+
+void Room::remove_last_student()
+{
+	_room_members.pop_back();
+}
+
 bool Room::no_not_friends_in_room(const std::string& student) const
 {
 	for (const auto& i : _room_members)
@@ -27,6 +33,7 @@ const std::vector<Student>& Room::get_room_members() const
 
 std::ostream& operator<<(std::ostream& os, const Room& rm)
 {
+	os << "members of room id " << rm._id << "	";
 	for (auto i : rm._room_members)
 		os << i.get_name() << "	";
 	os << std::endl;

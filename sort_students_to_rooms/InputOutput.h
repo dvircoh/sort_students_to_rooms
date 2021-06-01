@@ -6,7 +6,7 @@
 class InputOutput
 {
 public:
-	InputOutput(IDataAccess& dataAccess);
+	InputOutput(IDataAccess* dataAccess);
 	void input_from_teacher();
 	void print_rooms();
 
@@ -16,5 +16,5 @@ private:
 	void insert_not_friends();
 	void insert_room_details();
 
-	IDataAccess& m_dataAccess;
+	IDataAccess* m_dataAccess;
 };

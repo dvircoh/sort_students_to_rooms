@@ -75,3 +75,8 @@ void MemoryAccess::populate_rooms(std::vector<Room>& rooms)
 {
 	m_rooms = rooms;
 }
+
+Student MemoryAccess::get_student(const std::string& name) 
+{
+	return m_students.find(name)->second;
+}

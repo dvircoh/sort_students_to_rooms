@@ -14,6 +14,8 @@ public:
 	void add_friend(std::string& student, std::string& name) override;
 	void add_not_friend(std::string& student, std::string& name) override;
 	std::vector<std::string> get_students_names() const override;
+	Student get_student(const std::string& name) override;
+
 
 	//room method
 	void add_room(int room_id, int room_size) override;

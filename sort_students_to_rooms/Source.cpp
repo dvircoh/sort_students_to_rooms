@@ -7,12 +7,10 @@
 
 int main()
 {
-
-	
 	MemoryAccess dataAcess;
-	InputOutput input_output(dataAcess);
+	InputOutput input_output(&dataAcess);
 	input_output.input_from_teacher();
-	SortStudents sort(dataAcess);
+	SortStudents sort(&dataAcess);
 	sort.matching_students_to_the_room();
 	input_output.print_rooms();
 

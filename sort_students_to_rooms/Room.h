@@ -9,7 +9,8 @@ class Room
 public:
 	Room(int id, int size) : _id(id), _size(size) {}
 	bool is_full() const;
-	void insert_student(std::string);
+	void insert_student(Student);
+	void remove_last_student();
 	bool no_not_friends_in_room(const std::string& student) const;
 	const std::vector<Student>& get_room_members() const;
 	friend std::ostream& operator<<(std::ostream& os, const Room& rm);
