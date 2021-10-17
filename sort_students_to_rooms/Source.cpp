@@ -2,11 +2,13 @@
 #include "InputOutput.h"
 #include "MemoryAccess.h"
 #include "SortStudents.h"
+#include "SQliteDataAccess.h"
 
 
 
 int main()
 {
+	SQliteDataAccess data;
 	MemoryAccess dataAcess;
 	InputOutput input_output(&dataAcess);
 	input_output.input_from_teacher();

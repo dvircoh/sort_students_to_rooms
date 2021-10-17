@@ -13,7 +13,7 @@ public:
 	void add_student(std::string& name) override;
 	void add_friend(std::string& student, std::string& name) override;
 	void add_not_friend(std::string& student, std::string& name) override;
-	std::vector<std::string> get_students_names() const override;
+	std::vector<std::string> get_students_names() override;
 	Student get_student(const std::string& name) override;
 
 

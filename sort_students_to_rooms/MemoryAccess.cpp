@@ -51,7 +51,7 @@ void MemoryAccess::add_not_friend(std::string& student, std::string& not_friend_
 				std::cout << "error : The student does not exist or the student alredy exist in the list of the not_friends" << std::endl;
 }
 
-std::vector<std::string> MemoryAccess::get_students_names() const
+std::vector<std::string> MemoryAccess::get_students_names() 
 {
 	std::vector<std::string> names;
 	for (const auto& i : m_students)
